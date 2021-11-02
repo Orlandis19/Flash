@@ -1,6 +1,6 @@
 pragma solidity >=0.6.12;
 
-// SPDX-License-Identifier: UNLICENSED
+SPDX-License-Identifier: UNLICENSED
 
 interface IPancakePair {
     event Approval(address indexed owner, address indexed spender, uint value);
