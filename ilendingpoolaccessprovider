@@ -1,5 +1,7 @@
 pragma solidity ^0.6.12;
 
+// SPDX-License-Identifier: UNLICENSED
+
 /**
 @title ILendingPoolAddressesProvider interface
 @notice provides the interface to fetch the LendingPoolCore address
